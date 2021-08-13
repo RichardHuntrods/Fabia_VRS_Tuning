@@ -1,9 +1,6 @@
 package com.qa.fabiaTuning.controller;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -65,4 +62,5 @@ public class ItemController {
 	public ResponseEntity<String> updateItem(@RequestBody TuningItems item, @PathVariable Long id){
 this.service.updateTuningItems(item, id);
 return new ResponseEntity<String>("item Id: " + id + "has been updated", HttpStatus.ACCEPTED);
+}
 }

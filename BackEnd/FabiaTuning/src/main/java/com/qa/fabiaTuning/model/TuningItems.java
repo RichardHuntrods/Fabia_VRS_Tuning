@@ -21,6 +21,13 @@ private int performanceIncrease;
 private boolean highPriority;
 private boolean handlingImprovement;
 
+public String setNameOfPart;
+public int setQuantity;
+public int setCost;
+public int setPerformanceIncrease;
+public boolean setHighPriority;
+public boolean setHandlingImprovement;
+
 public TuningItems() {
 	super();	
 }

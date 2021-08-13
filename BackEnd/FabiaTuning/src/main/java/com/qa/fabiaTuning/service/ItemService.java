@@ -1,6 +1,7 @@
 package com.qa.fabiaTuning.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -37,7 +38,18 @@ public class ItemService {
 		
 	}
 
-	
+	public void updateTuningItems(TuningItems item, Long id) {
+	    Optional<TuningItems> optionalTuningItems = this.database.findById(id);
+	TuningItems oldItem = optionalTuningItems.get();
+		
+	oldItem.setNameOfPart=(item.getNameOfPart());
+	oldItem.setQuantity=(item.getQuantity());
+	oldItem.setCost=(item.getCost());
+	oldItem.setPerformanceIncrease=(item.getPerformanceIncrease());
+	oldItem.setHighPriority=(item.isHighPriority());
+	oldItem.setHandlingImprovement=(item.isHandlingImprovement());
+
+	this.database.save(oldItem);
 		
 	}
 
